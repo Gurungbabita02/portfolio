@@ -20,7 +20,7 @@ import { FaCode } from "react-icons/fa6";
 import { GrUserExpert } from "react-icons/gr";
 import { CgSupport } from "react-icons/cg";
 import CustomToast from "./components/CustomToast";
-
+import almuqeet_bg from "../../public/ussd_gateway.png"
 export default function Home() {
 
 
@@ -93,12 +93,12 @@ const sendHandler=()=>{
       ]
       const contactInfo=[{title:"Tdi City Mohali Punjab Sector 118",icon:   <IoLocationSharp className="text-red"/>},
         {title:"babita.grg121@gmail.com",icon: <IoMdMail className="text-red"/>},
-        {title:"+91849545454",icon: <IoCallSharp className="text-red"/>}
+        {title:"+918894176637",icon: <IoCallSharp className="text-red"/>}
       ]
-     const workData=[{title:"Addy Ads web",img:social_media,href:"https://quanti.app"},{title:"Quanti App",img:ai_img,href:"https://quanti.app"},{title:"Almuqeet Systems",img:work_img,href:"https://web.asmsc.net"},{title:"Costpoint Pro",img:work_img,href:"https://quanti.app"}]
+     const workData=[{title:"Quanti App",img:ai_img,href:"https://quanti.app"},{title:"Almuqeet Systems",img:almuqeet_bg,href:"https://web.asmsc.net"}]
   return (
     <section className="relative">
-      <div className="h-screen w-full flex justify-center items-center bg-[url('/hero_2.jpg.webp')]">
+      <div className="h-screen w-full flex justify-center items-center bg-[url('/hero_2.jpg.webp')] bg-fixed">
       <div className="">
       <h2 className="text-white text-[70px] font-semibold text-center sm:text-[40px]  md:text-[44px] sm:text-xl"> I'm Babita Gurung <br></br> A Fronted Developer</h2>
       <h3 className="text-white text-2xl sm:text-xl sm:pt-3" >Find Me On</h3>
@@ -118,7 +118,7 @@ const sendHandler=()=>{
     
       <div className="bg-black">
      <div className="container mx-auto pb-20 sm:pb-10 sm:px-6 md:px-6 px-4">
-      <div data-aos="zoom-in" data-aos-duration="2000"   className=''>
+      <div data-aos="zoom-in" data-aos-duration="2000" id="about"  className=''>
             <div className='grid grid-cols-2 sm:grid-cols-1 py-12'>
               <Image src={asign_girl} alt='asian_girl' className='w-full  h-[500px] object-contain sm:px-6' />
               <div className='p-5'>
@@ -156,7 +156,7 @@ const sendHandler=()=>{
           </div>
 
           {/* portfolio */}
-          <div data-aos="fade-down" data-aos-duration="2000"  className =''>
+          <div data-aos="fade-down" data-aos-duration="2000"   className =''>
             <div className="flex justify-center">
          
 
@@ -181,7 +181,7 @@ const sendHandler=()=>{
 
           {/* services */}
 
-          <div className=''>
+          <div className='' id="services">
           <h3 className="text-red font-semibold text-2xl text-center sm:mt-3 md:mt-6"> 
          Services</h3>
           <h4 className="text-center text-[40px] font-semibold text-red relative line sm:text-[26px]">What Can I Do</h4>
@@ -294,7 +294,7 @@ const sendHandler=()=>{
               <li className="flex gap-3 items-center pt-4" key={i}>
                 {data.icon}
            
-                <h3>{data.title}T</h3>
+                <h3>{data.title}</h3>
               </li>
 
                 )

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { FaRegCircleXmark } from "react-icons/fa6";
 import { BiSolidError } from "react-icons/bi";
 const CustomToast = ({message,type,onClose}) => {
-    console.log(type,"message90",onClose)
+  
     useEffect(() => {
         const timer = setTimeout(() => {
           onClose(false);

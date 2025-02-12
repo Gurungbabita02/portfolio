@@ -4,7 +4,7 @@ import { MdOutlineMail } from "react-icons/md";
 const Footer = () => {
   const footerData=[
     {heading:"Address",icon:<IoLocationOutline className='text-[30px] text-white sm:text-[24px] md:text-[26px]'/>,paragraph:"Tdi City sector 118 Mohali India"},
-    {heading:"Let's Talk",icon:<IoCallOutline className='text-[30px] text-white sm:text-[24px] md:text-[26px]'/>,paragraph:"+83849344223,+83849344223"},
+    {heading:"Let's Talk",icon:<IoCallOutline className='text-[30px] text-white sm:text-[24px] md:text-[26px]'/>,paragraph:"+918894176637"},
     {heading:"Send us Email",icon:<MdOutlineMail className='text-[30px] text-white sm:text-[24px] md:text-[26px]'/>,paragraph:"babita.grg121@gmail.com"}
   ]
   return (

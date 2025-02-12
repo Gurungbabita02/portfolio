@@ -2,17 +2,16 @@
 
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
-
-const Header = () => {
+import Image from 'next/image';
+const Header = ({id}) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   
 
     const menuItems =   [
         { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
-        { name: "Services", href: "/career" },
-        { name: "Blog", href: "" },
-        { name: "Contact Us", href: "/contact" },
+        { name: "About", href: "#about" },
+        { name: "Services", href: "#services" },
+        { name: "Contact Us", href: "#contact" },
       ]
     
     
@@ -40,14 +39,14 @@ const Header = () => {
   
   
   return (
-    <nav className="fixed w-full z-10 bg-red backdrop-blur-[20px]"  >
+    <nav className="fixed w-full z-10  backdrop-blur-[20px]" style={{backgroundImage:"linear-gradient(45deg, black, red)"}}  >
       <div className="container m-auto sm:px-6 md:px-6 px-4 ">
-        <div className="relative lg:flex lg:h-16 xl:h-16   lg:justify-center items-center xl:flex xl:justify-center">
-
+        <div className="relative lg:flex lg:h-16 xl:h-16   lg:justify-around items-center xl:flex xl:justify-around">
+          
           <div className="md:flex md:justify-between sm:flex sm:justify-between items-center sm:py-3 md:py-3">
             <div className="flex shrink-0 items-center">
              
-             
+            <Image src={"/logo12.png"} alt="" height={60} width={80}/>
             </div>
             <button
               type="button"
