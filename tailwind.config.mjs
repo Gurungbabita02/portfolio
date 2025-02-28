@@ -31,7 +31,8 @@ export default {
       },
       boxShadow:{
         shadow1:"1px 1px 10px 4px #b5bbe9",
-        shadow2:"4px 4px 16px 4px #e5e7ed"
+        shadow2:"4px 4px 16px 4px #e5e7ed",
+        shadow3:"2px 2px 10px #f18080"
       }
     },
   },

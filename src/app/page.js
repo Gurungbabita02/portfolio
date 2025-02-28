@@ -21,6 +21,7 @@ import { GrUserExpert } from "react-icons/gr";
 import { CgSupport } from "react-icons/cg";
 import CustomToast from "./components/CustomToast";
 import almuqeet_bg from "../../public/ussd_gateway.png"
+import { toast, ToastContainer } from "react-toastify";
 export default function Home() {
 
 
@@ -29,9 +30,8 @@ export default function Home() {
  },[])
 
 const [userData,setUserData]=useState({firstName:"",lastName:"",email:"",number:"",messages:""})
-const [showToast, setShowToast] = useState(false);
-const [showError, setShowError] = useState(false);
-const [message, setMessage] = useState("");
+
+const [loading, setLoading] = useState(false);
 
 const handleChange=(e)=>{
   setUserData({...userData,[e.target.name]:e.target.value})
@@ -43,23 +43,27 @@ const sendHandler=()=>{
     Object.keys(userData).length > 0 && 
     Object.values(userData).every(value => value !== null && value !== "" && value !== undefined)
   ){
-
-    fetch("/api/signup",
+    setLoading(true)
+  fetch("/api/signup",
       {body:JSON.stringify(userData),
       headers:{
       "Content-Type":"application/json"
       },
     method:"POST"}).then((res)=>{
-      console.log(res,"res90000")
+   
       if(res.status===201){
-        setShowToast(true);
-        setMessage("Data submitted successfully!")
+        setLoading(false)
+        toast.success("Data submitted successfully!")
       }else{
-        setShowError(true)
-        setMessage(res.statusText)
+        setLoading(false)
+        toast.error(res.statusText)
+     
       }
     })
-    .catch((err)=>{console.log(err,"error while sending data0--")})
+    .catch((err)=>{
+      toast.error(err)
+      setLoading(false)
+    })
     setUserData({firstName:"",lastName:"",email:"",number:"",messages:""})
   }
 
@@ -262,28 +266,32 @@ const sendHandler=()=>{
               <div className="flex  gap-7 sm:block md:block">
               <div className="pt-5 flex-1">
                 <label className="text-red font-semibold text-xl">First Name</label>
-                <input value={userData.firstName} onChange={(e)=>{handleChange(e)}} name="firstName" required type="text" className="p-3 mt-2 rounded-lg w-full border-b-2 border-black border-solid focus:border-purple focus:transition-all"/>
+                <input value={userData.firstName} onChange={(e)=>{handleChange(e)}} name="firstName" required type="text" className="p-3 mt-2 rounded-lg w-full border-b-2 border-black border-solid  focus:transition-all focus:border focus:border-solid focus:border-red focus:shadow-shadow3"/>
               </div>
               <div className="pt-5 flex-1">
                 <label className="text-red font-semibold text-xl">Last Name</label>
-                <input value={userData.lastName} onChange={(e)=>{handleChange(e)}} name="lastName" required type="text" className="p-3 mt-2 rounded-lg w-full border-b-2 border-black border-solid focus:border-purple focus:transition-all"/>
+                <input value={userData.lastName} onChange={(e)=>{handleChange(e)}} name="lastName" required type="text" className="p-3 mt-2 rounded-lg w-full border-b-2 border-black border-solid  focus:transition-all focus:border focus:border-solid focus:border-red focus:shadow-shadow3" />
               </div>
 
               </div>
               <div className="pt-5">
                 <label className="text-red font-semibold text-xl">Email Address</label>
-                <input value={userData.email} onChange={(e)=>{handleChange(e)}} name="email" required type="email" className="p-3 mt-2 rounded-lg w-full border-b-2 border-black border-solid focus:border-purple focus:transition-all"/>
+                <input value={userData.email} onChange={(e)=>{handleChange(e)}} name="email" required type="email" className="p-3 mt-2 rounded-lg w-full border-b-2 border-black border-solid  focus:transition-all focus:border focus:border-solid focus:border-red focus:shadow-shadow3"/>
               </div>
               <div className="pt-5">
                 <label className="text-red font-semibold text-xl">Phone Number</label>
-                <input value={userData.number} onChange={(e)=>{handleChange(e)}} name="number" required type="number" className="p-3 mt-2 rounded-lg w-full border-b-2 border-black border-solid focus:border-purple focus:transition-all"/>
+                <input value={userData.number} onChange={(e)=>{handleChange(e)}} name="number" required type="number" className="p-3 mt-2 rounded-lg w-full border-b-2 border-black border-solid  focus:transition-all focus:border focus:border-solid focus:border-red focus:shadow-shadow3"/>
               </div>
               <div className="pt-5">
                 <label className="text-red font-semibold text-xl">Message</label>
-                <textarea value={userData.messages} onChange={(e)=>{handleChange(e)}} name="messages" rows={7} className="w-full border-b-2  rounded-lg border-black border-solid focus:border-purple focus:transition-all"/>
+                <textarea value={userData.messages} onChange={(e)=>{handleChange(e)}} name="messages" rows={7} className="w-full border-b-2  rounded-lg border-black focus:border focus:border-solid focus:border-red focus:transition-all focus:shadow-shadow3"/>
               </div>
-              <button onClick={sendHandler} className="bg-gradient-to-bl from-red to-lightgray sm:p-2  p-3 cursor-pointer justify-center text-white rounded-lg text-lg mt-5 flex gap-3 w-[200px] items-center">
-             Send Message <IoIosSend className="text-2xl"/></button>
+              <button onClick={sendHandler} className="bg-gradient-to-bl from-red to-lightgray sm:p-2  p-3 cursor-pointer justify-center text-white rounded-lg text-lg mt-5 flex  w-[200px] items-center">
+                
+             {loading? <div className="w-8 h-8 rounded-full animate-spin border-2 border-dashed border-lightpink border-t-transparent"></div>:
+             <h3 className="flex items-center gap-3"> Send Message <IoIosSend className="text-2xl"/> </h3>
+             }
+             </button>
             </form>
           </div>
           <div  className="px-10 py-5 sm:px-0">
@@ -307,14 +315,7 @@ const sendHandler=()=>{
 
      </div>
       </div>
-      {
-        showToast || showError ?
-        <div className="fixed top-4 right-10 z-50">
-      <CustomToast message={message} type={showToast?"success":showError?"error":"warning"} onClose={showError?setShowError:setShowToast}/>        </div>
-         :""
-         }
-       
-    
+      <ToastContainer/>
     </section>
   );
 }
