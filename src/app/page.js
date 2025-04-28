@@ -126,7 +126,7 @@ const sendHandler=()=>{
             <div className='grid grid-cols-2 sm:grid-cols-1 py-12'>
               <Image src={asign_girl} alt='asian_girl' className='w-full  h-[500px] object-contain sm:px-6' />
               <div className='p-5'>
-                  <h3 className='text-[34px] sm:text-3xl font-semibold text-red relative line'>My Bio 127823</h3>
+                  <h3 className='text-[34px] sm:text-3xl font-semibold text-red relative line'>My Bio</h3>
                   <p className='text-lg pt-3 text-white font-medium '>
                   As a passionate Frontend Developer, I specialize in crafting responsive, user-friendly websites and applications that
                    provide seamless experiences across all devices. With a strong foundation in HTML, CSS, and JavaScript, I have expertise
