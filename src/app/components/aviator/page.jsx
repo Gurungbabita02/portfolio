@@ -46,14 +46,22 @@ const CrashPointVerifier = () => {
       setLoading(false);
     }
   };
+  const generateRandomClientSeed = () => {
+    const array = new Uint8Array(8);
+    window.crypto.getRandomValues(array);
+    const seed =Array.from(array, (b) => b.toString(16).padStart(2, '0')).join('')
+    setClientSeed(seed)
+    return seed ;
+  };
 
   return (
     <div className=" p-5 flex justify-center h-screen items-center">
 
       <div className=''>
       <h1 className="text-3xl font-semibold mb-5">Aviator Crash Point Verifier</h1>
+      <button className='bg-emerald-400 text-white px-4 py-2 rounded-md' onClick={generateRandomClientSeed}>Generate client seed</button>
       <div className="mb-4">
-        <label className="block text-sm font-medium">Client Seed:</label>
+        <label className="block text-sm font-medium mt-4">Client Seed:</label>
         <input
           type="text"
           value={clientSeed}

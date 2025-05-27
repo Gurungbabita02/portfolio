@@ -81,8 +81,9 @@ const sendHandler=()=>{
     ]
     
       const skills=
-      [{title:"HTML5",percentage:"70"},{title:"CSS3",percentage:"85"},{title:"React",percentage:"90"},
-      {title:"Bootstrap5",percentage:"98"},{title:"Tailwind Css",percentage:"85"},{title:"Responsive Design",percentage:"100"}
+      [{title:"HTML5",percentage:"70"},{title:"CSS3",percentage:"85"},{title:"React.js",percentage:"90"},
+        {title:"Next.js",percentage:"99"},
+      {title:"Bootstrap5",percentage:"98"},{title:"Tailwind Css",percentage:"85"},{title:"Responsive Design",percentage:"100"},
       ]
 
       const education=
@@ -99,7 +100,7 @@ const sendHandler=()=>{
         {title:"babita.grg121@gmail.com",icon: <IoMdMail className="text-red"/>},
         {title:"+918894176637",icon: <IoCallSharp className="text-red"/>}
       ]
-     const workData=[{title:"Quanti App",img:ai_img,href:"https://quanti.app"},{title:"Almuqeet Systems",img:almuqeet_bg,href:"https://web.asmsc.net"}]
+     const workData=[{title:"Quanti App",img:ai_img,href:"https://quanti.app"},{title:"Almuqeet Systems",img:almuqeet_bg,href:"https://almuqeet.net"}]
   return (
     <section className="relative">
       <div className="h-screen w-full flex justify-center items-center bg-[url('/hero_2.jpg.webp')] bg-fixed">
@@ -134,6 +135,7 @@ const sendHandler=()=>{
                   My goal is to blend creativity with technical proficiency to build engaging user interfaces that not only look great but also perform efficiently.
                   </p>
                   <ul className='mt-4  text-gray2'>
+                    <li className="text-3xl sm:text-xl">Tech Stack</li>
                     {skills?.map((data,ind)=>{
                       return(
                       <li key={ind}><h3 className="text-xl font-medium py-2">{data?.title}</h3>
@@ -188,7 +190,7 @@ const sendHandler=()=>{
           <div className='' id="services">
           <h3 className="text-red font-semibold text-2xl text-center sm:mt-3 md:mt-6"> 
          Services</h3>
-          <h4 className="text-center text-[40px] font-semibold text-red relative line sm:text-[26px]">What Can I Do</h4>
+          <h4 className="text-center text-[40px] font-semibold text-red relative line sm:text-[24px] sm:mt-4">What Can I Do</h4>
           
        <div className="p-4 grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10">
         {services?.map((data,i)=>{
