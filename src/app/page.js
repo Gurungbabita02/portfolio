@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import asign_girl from "../../public/asian_girl.jpg"
-import social_media from "../../public/socialmedia.png"
+import crm_bg from "../../public/crm_bg.avif"
 import ai_img from "../../public/ai.jpg"
 import work_img from "../../public/work_4.jpg.webp"
 import { FaRegBuilding } from "react-icons/fa";
@@ -88,7 +88,6 @@ const sendHandler=()=>{
 
       const education=
       [{title:"Bachelor of computer applications",unvName:"Himachal Pradesh University",year:"March 2019 - June 2022"},
-        // {title:"Higher Secondary Education",unvName:"HP.Board Dharamshala",year:"Jan 2018 - March 2019"},
       ]
       const jobData=
       [{title:"Frontend Developer",location:"Bestech Business Tower Sector 66 Mohali Punjab (India)",year:"Dec 2024 - Present",jobType:"Full Time",companyName:"Almuqeet Systems"},
@@ -100,7 +99,7 @@ const sendHandler=()=>{
         {title:"babita.grg121@gmail.com",icon: <IoMdMail className="text-red"/>},
         {title:"+918894176637",icon: <IoCallSharp className="text-red"/>}
       ]
-     const workData=[{title:"Quanti App",img:ai_img,href:"https://quanti.app"},{title:"Almuqeet Systems",img:almuqeet_bg,href:"https://almuqeet.net"}]
+     const workData=[{title:"Quanti App",img:ai_img,href:"https://quanti.app"},{title:"Almuqeet Systems",img:almuqeet_bg,href:"https://almuqeet.net"},{title:"CRM",img:crm_bg,href:"https://crm.asmsc.net"}]
   return (
     <section className="relative">
       <div className="h-screen w-full flex justify-center items-center bg-[url('/hero_2.jpg.webp')] bg-fixed">
@@ -129,7 +128,7 @@ const sendHandler=()=>{
               <div className='p-5'>
                   <h3 className='text-[34px] sm:text-3xl font-semibold text-red relative line'>My Bio</h3>
                   <p className='text-lg pt-3 text-white font-medium '>
-                  As a passionate Frontend Developer, I specialize in crafting responsive, user-friendly websites and applications that
+                  As a passionate Frontend Developer with 2+years of experience, I specialize in crafting responsive, user-friendly websites and applications that
                    provide seamless experiences across all devices. With a strong foundation in HTML, CSS, and JavaScript, I have expertise
                   in modern frontend frameworks and libraries such as React. 
                   My goal is to blend creativity with technical proficiency to build engaging user interfaces that not only look great but also perform efficiently.
@@ -174,7 +173,7 @@ const sendHandler=()=>{
                   return(
 
               <div key={i} className="relative portfolio_container rounded-lg overflow-hidden hover:scale-[1.05] transition-all ">
-                <Image src={data.img} alt="work_img" className="h-full object-cover "/>
+                <Image src={data.img} alt="work_img" height={360} width={400} className="h-full object-cover "/>
                 <div className="content">
                   <a href={data.href}  className="text-white text-lg font-medium cursor-pointer">{data.title}</a>
                 </div>
