@@ -174,7 +174,7 @@ const sendHandler=()=>{
                 {workData.map((data,i)=>{
                   return(
 
-              <div key={i} className="relative portfolio_container rounded-lg overflow-hidden hover:scale-[1.05] transition-all ">
+              <div key={i} className="relative portfolio_container rounded-lg overflow-hidden hover:scale-[1.01] transition-all ">
                 <Image src={data.img} alt="work_img" height={360} width={300} className="h-[360px] object-cover w-full"/>
                 <div className="content">
                   <a href={data.href}  className="text-white text-lg font-medium cursor-pointer">{data.title}</a>
@@ -190,7 +190,7 @@ const sendHandler=()=>{
           {/* services */}
 
           <div className='' id="services">
-          <h3 className="text-red font-semibold text-2xl text-center sm:mt-3 md:mt-6"> 
+          <h3 className="text-red font-semibold text-2xl text-center mt-5 sm:mt-3 md:mt-6"> 
          Services</h3>
           <h4 className="text-center text-[40px] font-semibold text-red relative line sm:text-[24px] sm:mt-4">What Can I Do</h4>
           
