@@ -2,8 +2,6 @@
 import Image from "next/image";
 import asign_girl from "../../public/asian_girl.jpg"
 import crm_bg from "../../public/crm_bg.avif"
-import ai_img from "../../public/ai.jpg"
-import work_img from "../../public/work_4.jpg.webp"
 import { FaRegBuilding } from "react-icons/fa";
 import { IoLocationOutline,IoLocationSharp,IoCallSharp } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
@@ -19,7 +17,6 @@ import { MdOutlineDesignServices } from "react-icons/md";
 import { FaCode } from "react-icons/fa6";
 import { GrUserExpert } from "react-icons/gr";
 import { CgSupport } from "react-icons/cg";
-import CustomToast from "./components/CustomToast";
 import almuqeet_bg from "../../public/ussd_gateway.png"
 import { toast, ToastContainer } from "react-toastify";
 import ss7bg from "../../public/ss7.png"
@@ -178,7 +175,7 @@ const sendHandler=()=>{
                   return(
 
               <div key={i} className="relative portfolio_container rounded-lg overflow-hidden hover:scale-[1.05] transition-all ">
-                <Image src={data.img} alt="work_img" height={360} width={400} className="h-full object-cover w-full"/>
+                <Image src={data.img} alt="work_img" height={360} width={300} className="h-[360px] object-cover w-full"/>
                 <div className="content">
                   <a href={data.href}  className="text-white text-lg font-medium cursor-pointer">{data.title}</a>
                   <p className="text-white text-base font-medium">{data?.des}</p>
