@@ -22,6 +22,7 @@ import { CgSupport } from "react-icons/cg";
 import CustomToast from "./components/CustomToast";
 import almuqeet_bg from "../../public/ussd_gateway.png"
 import { toast, ToastContainer } from "react-toastify";
+import ss7bg from "../../public/ss7.png"
 export default function Home() {
 
 
@@ -99,7 +100,11 @@ const sendHandler=()=>{
         {title:"babita.grg121@gmail.com",icon: <IoMdMail className="text-red"/>},
         {title:"+918894176637",icon: <IoCallSharp className="text-red"/>}
       ]
-     const workData=[{title:"Quanti App",img:ai_img,href:"https://quanti.app"},{title:"Almuqeet Systems",img:almuqeet_bg,href:"https://almuqeet.net"},{title:"CRM",img:crm_bg,href:"https://crm.asmsc.net"}]
+     const workData=[
+      {title:"Almuqeet Systems",img:almuqeet_bg,href:"https://almuqeet.net",des:"A corporate website with an intuitive signup process supporting multiple user types, complete with validation and responsive design."},
+      {title:"CRM Management Systems",img:crm_bg,href:"https://stagcrm.asmsc.net",des:"A comprehensive CRM platform designed to manage user profiles, roles, contacts, organizations, leads, and pipeline workflows for sales tracking and customer relationship management."},
+      {title:"Sigtran SS7 Dashboard",img:ss7bg,href:"https://stagss7.asmsc.net",des:"A telecom dashboard for managing SMPP and SS7 protocol connections, enabling administrators to configure users, roles, connections, IPs, and partners efficiently."}
+    ]
   return (
     <section className="relative">
       <div className="h-screen w-full flex justify-center items-center bg-[url('/hero_2.jpg.webp')] bg-fixed">
@@ -113,7 +118,7 @@ const sendHandler=()=>{
         <li className="text-white bg-lightgray rounded-lg p-4 text-base"><FaLinkedinIn /></li>
       </ul>
       <div className="mt-14">
-      <a href="#contact" className="bg-gradient-to-bl from-red to-lightgray text-base rounded-lg px-6 py-3 text-white sm:text-sm sm:px-[14px] sm:py-[10px]" >Contact Me</a>
+      <a href="#contact" className="bg-gradient-to-bl from-red  to-lightgray  hover:text-black text-base rounded-lg px-6 py-3 text-white sm:text-sm sm:px-[14px] sm:py-[10px]" >Contact Me</a>
 
       </div>
       </div>
@@ -173,9 +178,10 @@ const sendHandler=()=>{
                   return(
 
               <div key={i} className="relative portfolio_container rounded-lg overflow-hidden hover:scale-[1.05] transition-all ">
-                <Image src={data.img} alt="work_img" height={360} width={400} className="h-full object-cover "/>
+                <Image src={data.img} alt="work_img" height={360} width={400} className="h-full object-cover w-full"/>
                 <div className="content">
                   <a href={data.href}  className="text-white text-lg font-medium cursor-pointer">{data.title}</a>
+                  <p className="text-white text-base font-medium">{data?.des}</p>
                 </div>
               </div>
                   )
@@ -194,7 +200,7 @@ const sendHandler=()=>{
        <div className="p-4 grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10">
         {services?.map((data,i)=>{
         return(
-         <div key={i}  className="bg-gradient-to-bl from-red to-lightgray rounded-xl p-6 sm:p-3" >
+         <div key={i}  className="bg-gradient-to-bl from-red to-lightgray rounded-xl p-6 sm:p-3 hover:border-white hover:border hover:scale-[1.05] transition-all" >
          <h2 className="text-3xl flex justify-center text-red"> {data.icon}</h2>
            <h4 className="text-2xl text-center pt-3 font-bold text-white sm:text-[20px] ">{data.title}  </h4>
           
